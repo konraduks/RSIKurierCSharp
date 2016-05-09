@@ -1,0 +1,12 @@
+C:\django\WebServices\WebServices\bin\WebServices.dll.config
+C:\django\WebServices\WebServices\bin\WebServices.dll
+C:\django\WebServices\WebServices\bin\WebServices.pdb
+C:\django\WebServices\WebServices\obj\Debug\WebServices.csprojResolveAssemblyReference.cache
+C:\django\WebServices\WebServices\obj\Debug\WebServices.dll
+C:\django\WebServices\WebServices\obj\Debug\WebServices.pdb
+C:\django\KurierClient\WebServices\bin\WebServices.dll.config
+C:\django\KurierClient\WebServices\bin\WebServices.dll
+C:\django\KurierClient\WebServices\bin\WebServices.pdb
+C:\django\KurierClient\WebServices\obj\Debug\WebServices.csprojResolveAssemblyReference.cache
+C:\django\KurierClient\WebServices\obj\Debug\WebServices.dll
+C:\django\KurierClient\WebServices\obj\Debug\WebServices.pdb
