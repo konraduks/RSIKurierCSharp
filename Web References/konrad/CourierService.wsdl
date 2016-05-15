@@ -14,17 +14,29 @@
   <message name="registryResponse">
     <part name="parameters" element="tns:registryResponse" />
   </message>
-  <message name="getWayBill">
-    <part name="parameters" element="tns:getWayBill" />
+  <message name="getDistricts">
+    <part name="parameters" element="tns:getDistricts" />
   </message>
-  <message name="getWayBillResponse">
-    <part name="parameters" element="tns:getWayBillResponse" />
+  <message name="getDistrictsResponse">
+    <part name="parameters" element="tns:getDistrictsResponse" />
   </message>
-  <message name="trackOrder">
-    <part name="parameters" element="tns:trackOrder" />
+  <message name="getServerName">
+    <part name="parameters" element="tns:getServerName" />
   </message>
-  <message name="trackOrderResponse">
-    <part name="parameters" element="tns:trackOrderResponse" />
+  <message name="getServerNameResponse">
+    <part name="parameters" element="tns:getServerNameResponse" />
+  </message>
+  <message name="getUnclaimedParcels">
+    <part name="parameters" element="tns:getUnclaimedParcels" />
+  </message>
+  <message name="getUnclaimedParcelsResponse">
+    <part name="parameters" element="tns:getUnclaimedParcelsResponse" />
+  </message>
+  <message name="checkParcelStatus">
+    <part name="parameters" element="tns:checkParcelStatus" />
+  </message>
+  <message name="checkParcelStatusResponse">
+    <part name="parameters" element="tns:checkParcelStatusResponse" />
   </message>
   <message name="checkLogin">
     <part name="parameters" element="tns:checkLogin" />
@@ -38,11 +50,17 @@
   <message name="addEmployeeResponse">
     <part name="parameters" element="tns:addEmployeeResponse" />
   </message>
-  <message name="getServerName">
-    <part name="parameters" element="tns:getServerName" />
+  <message name="trackOrder">
+    <part name="parameters" element="tns:trackOrder" />
   </message>
-  <message name="getServerNameResponse">
-    <part name="parameters" element="tns:getServerNameResponse" />
+  <message name="trackOrderResponse">
+    <part name="parameters" element="tns:trackOrderResponse" />
+  </message>
+  <message name="getWayBill">
+    <part name="parameters" element="tns:getWayBill" />
+  </message>
+  <message name="getWayBillResponse">
+    <part name="parameters" element="tns:getWayBillResponse" />
   </message>
   <message name="getClientByAPIpassword">
     <part name="parameters" element="tns:getClientByAPIpassword" />
@@ -50,11 +68,11 @@
   <message name="getClientByAPIpasswordResponse">
     <part name="parameters" element="tns:getClientByAPIpasswordResponse" />
   </message>
-  <message name="getClientByLoginAndPassword">
-    <part name="parameters" element="tns:getClientByLoginAndPassword" />
+  <message name="placeOrderByLoginAndPassword">
+    <part name="parameters" element="tns:placeOrderByLoginAndPassword" />
   </message>
-  <message name="getClientByLoginAndPasswordResponse">
-    <part name="parameters" element="tns:getClientByLoginAndPasswordResponse" />
+  <message name="placeOrderByLoginAndPasswordResponse">
+    <part name="parameters" element="tns:placeOrderByLoginAndPasswordResponse" />
   </message>
   <message name="placeOrderByAPIpassword">
     <part name="parameters" element="tns:placeOrderByAPIpassword" />
@@ -62,30 +80,38 @@
   <message name="placeOrderByAPIpasswordResponse">
     <part name="parameters" element="tns:placeOrderByAPIpasswordResponse" />
   </message>
-  <message name="placeOrderByLoginAndPassword">
-    <part name="parameters" element="tns:placeOrderByLoginAndPassword" />
+  <message name="getClientByLoginAndPassword">
+    <part name="parameters" element="tns:getClientByLoginAndPassword" />
   </message>
-  <message name="placeOrderByLoginAndPasswordResponse">
-    <part name="parameters" element="tns:placeOrderByLoginAndPasswordResponse" />
+  <message name="getClientByLoginAndPasswordResponse">
+    <part name="parameters" element="tns:getClientByLoginAndPasswordResponse" />
   </message>
-  <message name="checkParcelStatus">
-    <part name="parameters" element="tns:checkParcelStatus" />
+  <message name="getCountries">
+    <part name="parameters" element="tns:getCountries" />
   </message>
-  <message name="checkParcelStatusResponse">
-    <part name="parameters" element="tns:checkParcelStatusResponse" />
+  <message name="getCountriesResponse">
+    <part name="parameters" element="tns:getCountriesResponse" />
   </message>
   <portType name="Courier">
     <operation name="registry">
       <input wsam:Action="http://server.webservices.konrad.com/Courier/registryRequest" message="tns:registry" />
       <output wsam:Action="http://server.webservices.konrad.com/Courier/registryResponse" message="tns:registryResponse" />
     </operation>
-    <operation name="getWayBill">
-      <input wsam:Action="http://server.webservices.konrad.com/Courier/getWayBillRequest" message="tns:getWayBill" />
-      <output wsam:Action="http://server.webservices.konrad.com/Courier/getWayBillResponse" message="tns:getWayBillResponse" />
+    <operation name="getDistricts">
+      <input wsam:Action="http://server.webservices.konrad.com/Courier/getDistrictsRequest" message="tns:getDistricts" />
+      <output wsam:Action="http://server.webservices.konrad.com/Courier/getDistrictsResponse" message="tns:getDistrictsResponse" />
     </operation>
-    <operation name="trackOrder">
-      <input wsam:Action="http://server.webservices.konrad.com/Courier/trackOrderRequest" message="tns:trackOrder" />
-      <output wsam:Action="http://server.webservices.konrad.com/Courier/trackOrderResponse" message="tns:trackOrderResponse" />
+    <operation name="getServerName">
+      <input wsam:Action="http://server.webservices.konrad.com/Courier/getServerNameRequest" message="tns:getServerName" />
+      <output wsam:Action="http://server.webservices.konrad.com/Courier/getServerNameResponse" message="tns:getServerNameResponse" />
+    </operation>
+    <operation name="getUnclaimedParcels">
+      <input wsam:Action="http://server.webservices.konrad.com/Courier/getUnclaimedParcelsRequest" message="tns:getUnclaimedParcels" />
+      <output wsam:Action="http://server.webservices.konrad.com/Courier/getUnclaimedParcelsResponse" message="tns:getUnclaimedParcelsResponse" />
+    </operation>
+    <operation name="checkParcelStatus">
+      <input wsam:Action="http://server.webservices.konrad.com/Courier/checkParcelStatusRequest" message="tns:checkParcelStatus" />
+      <output wsam:Action="http://server.webservices.konrad.com/Courier/checkParcelStatusResponse" message="tns:checkParcelStatusResponse" />
     </operation>
     <operation name="checkLogin">
       <input wsam:Action="http://server.webservices.konrad.com/Courier/checkLoginRequest" message="tns:checkLogin" />
@@ -95,29 +121,33 @@
       <input wsam:Action="http://server.webservices.konrad.com/Courier/addEmployeeRequest" message="tns:addEmployee" />
       <output wsam:Action="http://server.webservices.konrad.com/Courier/addEmployeeResponse" message="tns:addEmployeeResponse" />
     </operation>
-    <operation name="getServerName">
-      <input wsam:Action="http://server.webservices.konrad.com/Courier/getServerNameRequest" message="tns:getServerName" />
-      <output wsam:Action="http://server.webservices.konrad.com/Courier/getServerNameResponse" message="tns:getServerNameResponse" />
+    <operation name="trackOrder">
+      <input wsam:Action="http://server.webservices.konrad.com/Courier/trackOrderRequest" message="tns:trackOrder" />
+      <output wsam:Action="http://server.webservices.konrad.com/Courier/trackOrderResponse" message="tns:trackOrderResponse" />
+    </operation>
+    <operation name="getWayBill">
+      <input wsam:Action="http://server.webservices.konrad.com/Courier/getWayBillRequest" message="tns:getWayBill" />
+      <output wsam:Action="http://server.webservices.konrad.com/Courier/getWayBillResponse" message="tns:getWayBillResponse" />
     </operation>
     <operation name="getClientByAPIpassword">
       <input wsam:Action="http://server.webservices.konrad.com/Courier/getClientByAPIpasswordRequest" message="tns:getClientByAPIpassword" />
       <output wsam:Action="http://server.webservices.konrad.com/Courier/getClientByAPIpasswordResponse" message="tns:getClientByAPIpasswordResponse" />
     </operation>
-    <operation name="getClientByLoginAndPassword">
-      <input wsam:Action="http://server.webservices.konrad.com/Courier/getClientByLoginAndPasswordRequest" message="tns:getClientByLoginAndPassword" />
-      <output wsam:Action="http://server.webservices.konrad.com/Courier/getClientByLoginAndPasswordResponse" message="tns:getClientByLoginAndPasswordResponse" />
+    <operation name="placeOrderByLoginAndPassword">
+      <input wsam:Action="http://server.webservices.konrad.com/Courier/placeOrderByLoginAndPasswordRequest" message="tns:placeOrderByLoginAndPassword" />
+      <output wsam:Action="http://server.webservices.konrad.com/Courier/placeOrderByLoginAndPasswordResponse" message="tns:placeOrderByLoginAndPasswordResponse" />
     </operation>
     <operation name="placeOrderByAPIpassword">
       <input wsam:Action="http://server.webservices.konrad.com/Courier/placeOrderByAPIpasswordRequest" message="tns:placeOrderByAPIpassword" />
       <output wsam:Action="http://server.webservices.konrad.com/Courier/placeOrderByAPIpasswordResponse" message="tns:placeOrderByAPIpasswordResponse" />
     </operation>
-    <operation name="placeOrderByLoginAndPassword">
-      <input wsam:Action="http://server.webservices.konrad.com/Courier/placeOrderByLoginAndPasswordRequest" message="tns:placeOrderByLoginAndPassword" />
-      <output wsam:Action="http://server.webservices.konrad.com/Courier/placeOrderByLoginAndPasswordResponse" message="tns:placeOrderByLoginAndPasswordResponse" />
+    <operation name="getClientByLoginAndPassword">
+      <input wsam:Action="http://server.webservices.konrad.com/Courier/getClientByLoginAndPasswordRequest" message="tns:getClientByLoginAndPassword" />
+      <output wsam:Action="http://server.webservices.konrad.com/Courier/getClientByLoginAndPasswordResponse" message="tns:getClientByLoginAndPasswordResponse" />
     </operation>
-    <operation name="checkParcelStatus">
-      <input wsam:Action="http://server.webservices.konrad.com/Courier/checkParcelStatusRequest" message="tns:checkParcelStatus" />
-      <output wsam:Action="http://server.webservices.konrad.com/Courier/checkParcelStatusResponse" message="tns:checkParcelStatusResponse" />
+    <operation name="getCountries">
+      <input wsam:Action="http://server.webservices.konrad.com/Courier/getCountriesRequest" message="tns:getCountries" />
+      <output wsam:Action="http://server.webservices.konrad.com/Courier/getCountriesResponse" message="tns:getCountriesResponse" />
     </operation>
   </portType>
   <binding name="CourierPortBinding" type="tns:Courier">
@@ -132,7 +162,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="getWayBill">
+    <operation name="getDistricts">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -141,7 +171,25 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="trackOrder">
+    <operation name="getServerName">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getUnclaimedParcels">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="checkParcelStatus">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -168,7 +216,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="getServerName">
+    <operation name="trackOrder">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getWayBill">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -186,7 +243,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="getClientByLoginAndPassword">
+    <operation name="placeOrderByLoginAndPassword">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -204,7 +261,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="placeOrderByLoginAndPassword">
+    <operation name="getClientByLoginAndPassword">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -213,7 +270,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="checkParcelStatus">
+    <operation name="getCountries">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

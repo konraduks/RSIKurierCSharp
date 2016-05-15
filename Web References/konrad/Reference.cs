@@ -32,25 +32,31 @@ namespace WebServices.konrad {
         
         private System.Threading.SendOrPostCallback registryOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getWayBillOperationCompleted;
+        private System.Threading.SendOrPostCallback getDistrictsOperationCompleted;
         
-        private System.Threading.SendOrPostCallback trackOrderOperationCompleted;
+        private System.Threading.SendOrPostCallback getServerNameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getUnclaimedParcelsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback checkParcelStatusOperationCompleted;
         
         private System.Threading.SendOrPostCallback checkLoginOperationCompleted;
         
         private System.Threading.SendOrPostCallback addEmployeeOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getServerNameOperationCompleted;
+        private System.Threading.SendOrPostCallback trackOrderOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getWayBillOperationCompleted;
         
         private System.Threading.SendOrPostCallback getClientByAPIpasswordOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getClientByLoginAndPasswordOperationCompleted;
+        private System.Threading.SendOrPostCallback placeOrderByLoginAndPasswordOperationCompleted;
         
         private System.Threading.SendOrPostCallback placeOrderByAPIpasswordOperationCompleted;
         
-        private System.Threading.SendOrPostCallback placeOrderByLoginAndPasswordOperationCompleted;
+        private System.Threading.SendOrPostCallback getClientByLoginAndPasswordOperationCompleted;
         
-        private System.Threading.SendOrPostCallback checkParcelStatusOperationCompleted;
+        private System.Threading.SendOrPostCallback getCountriesOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -94,10 +100,16 @@ namespace WebServices.konrad {
         public event registryCompletedEventHandler registryCompleted;
         
         /// <remarks/>
-        public event getWayBillCompletedEventHandler getWayBillCompleted;
+        public event getDistrictsCompletedEventHandler getDistrictsCompleted;
         
         /// <remarks/>
-        public event trackOrderCompletedEventHandler trackOrderCompleted;
+        public event getServerNameCompletedEventHandler getServerNameCompleted;
+        
+        /// <remarks/>
+        public event getUnclaimedParcelsCompletedEventHandler getUnclaimedParcelsCompleted;
+        
+        /// <remarks/>
+        public event checkParcelStatusCompletedEventHandler checkParcelStatusCompleted;
         
         /// <remarks/>
         public event checkLoginCompletedEventHandler checkLoginCompleted;
@@ -106,22 +118,25 @@ namespace WebServices.konrad {
         public event addEmployeeCompletedEventHandler addEmployeeCompleted;
         
         /// <remarks/>
-        public event getServerNameCompletedEventHandler getServerNameCompleted;
+        public event trackOrderCompletedEventHandler trackOrderCompleted;
+        
+        /// <remarks/>
+        public event getWayBillCompletedEventHandler getWayBillCompleted;
         
         /// <remarks/>
         public event getClientByAPIpasswordCompletedEventHandler getClientByAPIpasswordCompleted;
         
         /// <remarks/>
-        public event getClientByLoginAndPasswordCompletedEventHandler getClientByLoginAndPasswordCompleted;
+        public event placeOrderByLoginAndPasswordCompletedEventHandler placeOrderByLoginAndPasswordCompleted;
         
         /// <remarks/>
         public event placeOrderByAPIpasswordCompletedEventHandler placeOrderByAPIpasswordCompleted;
         
         /// <remarks/>
-        public event placeOrderByLoginAndPasswordCompletedEventHandler placeOrderByLoginAndPasswordCompleted;
+        public event getClientByLoginAndPasswordCompletedEventHandler getClientByLoginAndPasswordCompleted;
         
         /// <remarks/>
-        public event checkParcelStatusCompletedEventHandler checkParcelStatusCompleted;
+        public event getCountriesCompletedEventHandler getCountriesCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -173,61 +188,119 @@ namespace WebServices.konrad {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", IsNullable=true)]
-        public byte[] getWayBill([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0) {
-            object[] results = this.Invoke("getWayBill", new object[] {
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string[] getDistricts([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0) {
+            object[] results = this.Invoke("getDistricts", new object[] {
                         arg0});
-            return ((byte[])(results[0]));
+            return ((string[])(results[0]));
         }
         
         /// <remarks/>
-        public void getWayBillAsync(string arg0) {
-            this.getWayBillAsync(arg0, null);
+        public void getDistrictsAsync(string arg0) {
+            this.getDistrictsAsync(arg0, null);
         }
         
         /// <remarks/>
-        public void getWayBillAsync(string arg0, object userState) {
-            if ((this.getWayBillOperationCompleted == null)) {
-                this.getWayBillOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetWayBillOperationCompleted);
+        public void getDistrictsAsync(string arg0, object userState) {
+            if ((this.getDistrictsOperationCompleted == null)) {
+                this.getDistrictsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetDistrictsOperationCompleted);
             }
-            this.InvokeAsync("getWayBill", new object[] {
-                        arg0}, this.getWayBillOperationCompleted, userState);
+            this.InvokeAsync("getDistricts", new object[] {
+                        arg0}, this.getDistrictsOperationCompleted, userState);
         }
         
-        private void OngetWayBillOperationCompleted(object arg) {
-            if ((this.getWayBillCompleted != null)) {
+        private void OngetDistrictsOperationCompleted(object arg) {
+            if ((this.getDistrictsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getWayBillCompleted(this, new getWayBillCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.getDistrictsCompleted(this, new getDistrictsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string[] trackOrder([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0) {
-            object[] results = this.Invoke("trackOrder", new object[] {
-                        arg0});
-            return ((string[])(results[0]));
+        public string getServerName() {
+            object[] results = this.Invoke("getServerName", new object[0]);
+            return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void trackOrderAsync(string arg0) {
-            this.trackOrderAsync(arg0, null);
+        public void getServerNameAsync() {
+            this.getServerNameAsync(null);
         }
         
         /// <remarks/>
-        public void trackOrderAsync(string arg0, object userState) {
-            if ((this.trackOrderOperationCompleted == null)) {
-                this.trackOrderOperationCompleted = new System.Threading.SendOrPostCallback(this.OntrackOrderOperationCompleted);
+        public void getServerNameAsync(object userState) {
+            if ((this.getServerNameOperationCompleted == null)) {
+                this.getServerNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetServerNameOperationCompleted);
             }
-            this.InvokeAsync("trackOrder", new object[] {
-                        arg0}, this.trackOrderOperationCompleted, userState);
+            this.InvokeAsync("getServerName", new object[0], this.getServerNameOperationCompleted, userState);
         }
         
-        private void OntrackOrderOperationCompleted(object arg) {
-            if ((this.trackOrderCompleted != null)) {
+        private void OngetServerNameOperationCompleted(object arg) {
+            if ((this.getServerNameCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.trackOrderCompleted(this, new trackOrderCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.getServerNameCompleted(this, new getServerNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void getUnclaimedParcels() {
+            this.Invoke("getUnclaimedParcels", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void getUnclaimedParcelsAsync() {
+            this.getUnclaimedParcelsAsync(null);
+        }
+        
+        /// <remarks/>
+        public void getUnclaimedParcelsAsync(object userState) {
+            if ((this.getUnclaimedParcelsOperationCompleted == null)) {
+                this.getUnclaimedParcelsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetUnclaimedParcelsOperationCompleted);
+            }
+            this.InvokeAsync("getUnclaimedParcels", new object[0], this.getUnclaimedParcelsOperationCompleted, userState);
+        }
+        
+        private void OngetUnclaimedParcelsOperationCompleted(object arg) {
+            if ((this.getUnclaimedParcelsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getUnclaimedParcelsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool checkParcelStatus([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] int arg1, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg2) {
+            object[] results = this.Invoke("checkParcelStatus", new object[] {
+                        arg0,
+                        arg1,
+                        arg2});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void checkParcelStatusAsync(string arg0, int arg1, string arg2) {
+            this.checkParcelStatusAsync(arg0, arg1, arg2, null);
+        }
+        
+        /// <remarks/>
+        public void checkParcelStatusAsync(string arg0, int arg1, string arg2, object userState) {
+            if ((this.checkParcelStatusOperationCompleted == null)) {
+                this.checkParcelStatusOperationCompleted = new System.Threading.SendOrPostCallback(this.OncheckParcelStatusOperationCompleted);
+            }
+            this.InvokeAsync("checkParcelStatus", new object[] {
+                        arg0,
+                        arg1,
+                        arg2}, this.checkParcelStatusOperationCompleted, userState);
+        }
+        
+        private void OncheckParcelStatusOperationCompleted(object arg) {
+            if ((this.checkParcelStatusCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.checkParcelStatusCompleted(this, new checkParcelStatusCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -290,28 +363,60 @@ namespace WebServices.konrad {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string getServerName() {
-            object[] results = this.Invoke("getServerName", new object[0]);
-            return ((string)(results[0]));
+        public string[] trackOrder([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0) {
+            object[] results = this.Invoke("trackOrder", new object[] {
+                        arg0});
+            return ((string[])(results[0]));
         }
         
         /// <remarks/>
-        public void getServerNameAsync() {
-            this.getServerNameAsync(null);
+        public void trackOrderAsync(string arg0) {
+            this.trackOrderAsync(arg0, null);
         }
         
         /// <remarks/>
-        public void getServerNameAsync(object userState) {
-            if ((this.getServerNameOperationCompleted == null)) {
-                this.getServerNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetServerNameOperationCompleted);
+        public void trackOrderAsync(string arg0, object userState) {
+            if ((this.trackOrderOperationCompleted == null)) {
+                this.trackOrderOperationCompleted = new System.Threading.SendOrPostCallback(this.OntrackOrderOperationCompleted);
             }
-            this.InvokeAsync("getServerName", new object[0], this.getServerNameOperationCompleted, userState);
+            this.InvokeAsync("trackOrder", new object[] {
+                        arg0}, this.trackOrderOperationCompleted, userState);
         }
         
-        private void OngetServerNameOperationCompleted(object arg) {
-            if ((this.getServerNameCompleted != null)) {
+        private void OntrackOrderOperationCompleted(object arg) {
+            if ((this.trackOrderCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getServerNameCompleted(this, new getServerNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.trackOrderCompleted(this, new trackOrderCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", IsNullable=true)]
+        public byte[] getWayBill([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0) {
+            object[] results = this.Invoke("getWayBill", new object[] {
+                        arg0});
+            return ((byte[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getWayBillAsync(string arg0) {
+            this.getWayBillAsync(arg0, null);
+        }
+        
+        /// <remarks/>
+        public void getWayBillAsync(string arg0, object userState) {
+            if ((this.getWayBillOperationCompleted == null)) {
+                this.getWayBillOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetWayBillOperationCompleted);
+            }
+            this.InvokeAsync("getWayBill", new object[] {
+                        arg0}, this.getWayBillOperationCompleted, userState);
+        }
+        
+        private void OngetWayBillOperationCompleted(object arg) {
+            if ((this.getWayBillCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getWayBillCompleted(this, new getWayBillCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -342,82 +447,6 @@ namespace WebServices.konrad {
             if ((this.getClientByAPIpasswordCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getClientByAPIpasswordCompleted(this, new getClientByAPIpasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public client getClientByLoginAndPassword([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg1) {
-            object[] results = this.Invoke("getClientByLoginAndPassword", new object[] {
-                        arg0,
-                        arg1});
-            return ((client)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getClientByLoginAndPasswordAsync(string arg0, string arg1) {
-            this.getClientByLoginAndPasswordAsync(arg0, arg1, null);
-        }
-        
-        /// <remarks/>
-        public void getClientByLoginAndPasswordAsync(string arg0, string arg1, object userState) {
-            if ((this.getClientByLoginAndPasswordOperationCompleted == null)) {
-                this.getClientByLoginAndPasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetClientByLoginAndPasswordOperationCompleted);
-            }
-            this.InvokeAsync("getClientByLoginAndPassword", new object[] {
-                        arg0,
-                        arg1}, this.getClientByLoginAndPasswordOperationCompleted, userState);
-        }
-        
-        private void OngetClientByLoginAndPasswordOperationCompleted(object arg) {
-            if ((this.getClientByLoginAndPasswordCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getClientByLoginAndPasswordCompleted(this, new getClientByLoginAndPasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string placeOrderByAPIpassword([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg1, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg2, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg3, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg4, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg5, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg6, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg7) {
-            object[] results = this.Invoke("placeOrderByAPIpassword", new object[] {
-                        arg0,
-                        arg1,
-                        arg2,
-                        arg3,
-                        arg4,
-                        arg5,
-                        arg6,
-                        arg7});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void placeOrderByAPIpasswordAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7) {
-            this.placeOrderByAPIpasswordAsync(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, null);
-        }
-        
-        /// <remarks/>
-        public void placeOrderByAPIpasswordAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, object userState) {
-            if ((this.placeOrderByAPIpasswordOperationCompleted == null)) {
-                this.placeOrderByAPIpasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnplaceOrderByAPIpasswordOperationCompleted);
-            }
-            this.InvokeAsync("placeOrderByAPIpassword", new object[] {
-                        arg0,
-                        arg1,
-                        arg2,
-                        arg3,
-                        arg4,
-                        arg5,
-                        arg6,
-                        arg7}, this.placeOrderByAPIpasswordOperationCompleted, userState);
-        }
-        
-        private void OnplaceOrderByAPIpasswordOperationCompleted(object arg) {
-            if ((this.placeOrderByAPIpasswordCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.placeOrderByAPIpasswordCompleted(this, new placeOrderByAPIpasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -470,34 +499,104 @@ namespace WebServices.konrad {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool checkParcelStatus([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] int arg1, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg2) {
-            object[] results = this.Invoke("checkParcelStatus", new object[] {
+        public string placeOrderByAPIpassword([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg1, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg2, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg3, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg4, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg5, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg6, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg7) {
+            object[] results = this.Invoke("placeOrderByAPIpassword", new object[] {
                         arg0,
                         arg1,
-                        arg2});
-            return ((bool)(results[0]));
+                        arg2,
+                        arg3,
+                        arg4,
+                        arg5,
+                        arg6,
+                        arg7});
+            return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void checkParcelStatusAsync(string arg0, int arg1, string arg2) {
-            this.checkParcelStatusAsync(arg0, arg1, arg2, null);
+        public void placeOrderByAPIpasswordAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7) {
+            this.placeOrderByAPIpasswordAsync(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, null);
         }
         
         /// <remarks/>
-        public void checkParcelStatusAsync(string arg0, int arg1, string arg2, object userState) {
-            if ((this.checkParcelStatusOperationCompleted == null)) {
-                this.checkParcelStatusOperationCompleted = new System.Threading.SendOrPostCallback(this.OncheckParcelStatusOperationCompleted);
+        public void placeOrderByAPIpasswordAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, object userState) {
+            if ((this.placeOrderByAPIpasswordOperationCompleted == null)) {
+                this.placeOrderByAPIpasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnplaceOrderByAPIpasswordOperationCompleted);
             }
-            this.InvokeAsync("checkParcelStatus", new object[] {
+            this.InvokeAsync("placeOrderByAPIpassword", new object[] {
                         arg0,
                         arg1,
-                        arg2}, this.checkParcelStatusOperationCompleted, userState);
+                        arg2,
+                        arg3,
+                        arg4,
+                        arg5,
+                        arg6,
+                        arg7}, this.placeOrderByAPIpasswordOperationCompleted, userState);
         }
         
-        private void OncheckParcelStatusOperationCompleted(object arg) {
-            if ((this.checkParcelStatusCompleted != null)) {
+        private void OnplaceOrderByAPIpasswordOperationCompleted(object arg) {
+            if ((this.placeOrderByAPIpasswordCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.checkParcelStatusCompleted(this, new checkParcelStatusCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.placeOrderByAPIpasswordCompleted(this, new placeOrderByAPIpasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public client getClientByLoginAndPassword([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg1) {
+            object[] results = this.Invoke("getClientByLoginAndPassword", new object[] {
+                        arg0,
+                        arg1});
+            return ((client)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getClientByLoginAndPasswordAsync(string arg0, string arg1) {
+            this.getClientByLoginAndPasswordAsync(arg0, arg1, null);
+        }
+        
+        /// <remarks/>
+        public void getClientByLoginAndPasswordAsync(string arg0, string arg1, object userState) {
+            if ((this.getClientByLoginAndPasswordOperationCompleted == null)) {
+                this.getClientByLoginAndPasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetClientByLoginAndPasswordOperationCompleted);
+            }
+            this.InvokeAsync("getClientByLoginAndPassword", new object[] {
+                        arg0,
+                        arg1}, this.getClientByLoginAndPasswordOperationCompleted, userState);
+        }
+        
+        private void OngetClientByLoginAndPasswordOperationCompleted(object arg) {
+            if ((this.getClientByLoginAndPasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getClientByLoginAndPasswordCompleted(this, new getClientByLoginAndPasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string[] getCountries() {
+            object[] results = this.Invoke("getCountries", new object[0]);
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getCountriesAsync() {
+            this.getCountriesAsync(null);
+        }
+        
+        /// <remarks/>
+        public void getCountriesAsync(object userState) {
+            if ((this.getCountriesOperationCompleted == null)) {
+                this.getCountriesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetCountriesOperationCompleted);
+            }
+            this.InvokeAsync("getCountries", new object[0], this.getCountriesOperationCompleted, userState);
+        }
+        
+        private void OngetCountriesOperationCompleted(object arg) {
+            if ((this.getCountriesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getCountriesCompleted(this, new getCountriesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -713,43 +812,17 @@ namespace WebServices.konrad {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void getWayBillCompletedEventHandler(object sender, getWayBillCompletedEventArgs e);
+    public delegate void getDistrictsCompletedEventHandler(object sender, getDistrictsCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getWayBillCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class getDistrictsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal getWayBillCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public byte[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((byte[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void trackOrderCompletedEventHandler(object sender, trackOrderCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class trackOrderCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal trackOrderCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal getDistrictsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -759,6 +832,62 @@ namespace WebServices.konrad {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void getServerNameCompletedEventHandler(object sender, getServerNameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getServerNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getServerNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void getUnclaimedParcelsCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void checkParcelStatusCompletedEventHandler(object sender, checkParcelStatusCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class checkParcelStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal checkParcelStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -795,26 +924,52 @@ namespace WebServices.konrad {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void getServerNameCompletedEventHandler(object sender, getServerNameCompletedEventArgs e);
+    public delegate void trackOrderCompletedEventHandler(object sender, trackOrderCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getServerNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class trackOrderCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal getServerNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal trackOrderCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public string Result {
+        public string[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void getWayBillCompletedEventHandler(object sender, getWayBillCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getWayBillCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getWayBillCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public byte[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((byte[])(this.results[0]));
             }
         }
     }
@@ -847,26 +1002,26 @@ namespace WebServices.konrad {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void getClientByLoginAndPasswordCompletedEventHandler(object sender, getClientByLoginAndPasswordCompletedEventArgs e);
+    public delegate void placeOrderByLoginAndPasswordCompletedEventHandler(object sender, placeOrderByLoginAndPasswordCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getClientByLoginAndPasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class placeOrderByLoginAndPasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal getClientByLoginAndPasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal placeOrderByLoginAndPasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public client Result {
+        public string Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((client)(this.results[0]));
+                return ((string)(this.results[0]));
             }
         }
     }
@@ -899,52 +1054,52 @@ namespace WebServices.konrad {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void placeOrderByLoginAndPasswordCompletedEventHandler(object sender, placeOrderByLoginAndPasswordCompletedEventArgs e);
+    public delegate void getClientByLoginAndPasswordCompletedEventHandler(object sender, getClientByLoginAndPasswordCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class placeOrderByLoginAndPasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class getClientByLoginAndPasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal placeOrderByLoginAndPasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal getClientByLoginAndPasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public string Result {
+        public client Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return ((client)(this.results[0]));
             }
         }
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void checkParcelStatusCompletedEventHandler(object sender, checkParcelStatusCompletedEventArgs e);
+    public delegate void getCountriesCompletedEventHandler(object sender, getCountriesCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class checkParcelStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class getCountriesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal checkParcelStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal getCountriesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public bool Result {
+        public string[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
+                return ((string[])(this.results[0]));
             }
         }
     }

@@ -26,7 +26,10 @@
         <asp:Label ID="Label9" runat="server" Text="Miasto odbiorcy:"></asp:Label>
       <asp:TextBox ID="TextBoxCity" runat="server"></asp:TextBox><br />
         <asp:Label ID="Label4" runat="server" Text="Kraj odbiorcy:"></asp:Label>
-      <asp:TextBox ID="TextBoxCountry" runat="server"></asp:TextBox><br />
+      <!--<asp:TextBox ID="TextBoxCountry" runat="server"></asp:TextBox>-->        
+        <asp:DropDownList AutoPostBack="true" EnableViewState="True" ID="DropDownCountry" runat="server" OnSelectedIndexChanged="DropDownCountry_SelectedIndexChanged"></asp:DropDownList><br />
+      <asp:Label ID="Label11" runat="server" Text="Dystrykt odbiorcy:"></asp:Label>
+        <asp:DropDownList ID="DropDownDistricts" runat="server"></asp:DropDownList><br />
         <asp:Label ID="Label5" runat="server" Text="Kod pocztowy odbiorcy:"></asp:Label>
       <asp:TextBox ID="TextBoxZipCode" runat="server"></asp:TextBox><br />
         <asp:Label ID="Label6" runat="server" Text="Telefon odbiorcy:"></asp:Label>
