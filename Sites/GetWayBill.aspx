@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
     <div id="container">
-<div id="header"><h1><a href="http://www.free-css.com/free-css-layouts.php">Free CSS Layouts</a></h1></div>
+<div id="header"><h1><a href="http://www.free-css.com/free-css-layouts.php">Kurier Company</a></h1></div>
   <div id="wrapper">
     <div id="content">
       <p><strong>Pobranie listu przewozowego</strong></p>
@@ -28,6 +28,7 @@
       <li><a href="ParcelOrderLogPass.aspx">Nadanie przesylki przez login i hasło</a></li>
       <li><a href="GetWayBill.aspx">Pobranie listu przewozowego</a></li>
       <li><a href="ChangeParcelStatus.aspx">Zmiana statusu przesyłki</a></li>
+      <li><a href="UnclaimedParcels.aspx">Nieodebrane przesyłki</a></li>
       <li><a href="Tracking.aspx">Sledzenie przesylek</a></li>
     </ul>
   </div>  

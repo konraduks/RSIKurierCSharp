@@ -40,6 +40,7 @@
       <xs:element minOccurs="0" name="arg7" type="xs:string" />
       <xs:element minOccurs="0" name="arg8" type="xs:string" />
       <xs:element minOccurs="0" name="arg9" type="xs:string" />
+      <xs:element minOccurs="0" name="arg10" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="registryResponse">
@@ -78,6 +79,7 @@
       <xs:element minOccurs="0" name="arg6" type="xs:string" />
       <xs:element minOccurs="0" name="arg7" type="xs:string" />
       <xs:element minOccurs="0" name="arg8" type="xs:string" />
+      <xs:element minOccurs="0" name="arg9" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="placeOrderByLoginAndPasswordResponse">
@@ -86,10 +88,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="getUnclaimedParcels">
-    <xs:sequence />
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="getUnclaimedParcelsResponse">
-    <xs:sequence />
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="getClientByLoginAndPassword">
     <xs:sequence>
@@ -107,7 +113,7 @@
       <xs:element minOccurs="0" name="APIpassword" type="xs:string" />
       <xs:element minOccurs="0" name="address" type="xs:string" />
       <xs:element minOccurs="0" name="city" type="xs:string" />
-      <xs:element minOccurs="0" name="country" type="xs:string" />
+      <xs:element minOccurs="0" name="countryDistrict" type="tns:countryDistrict" />
       <xs:element minOccurs="0" name="email" type="xs:string" />
       <xs:element minOccurs="0" name="id" type="xs:long" />
       <xs:element minOccurs="0" name="login" type="xs:string" />
@@ -115,6 +121,17 @@
       <xs:element minOccurs="0" name="password" type="xs:string" />
       <xs:element minOccurs="0" name="phoneNumber" type="xs:string" />
       <xs:element minOccurs="0" name="zipCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="countryDistrict">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="country" type="tns:country" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="country">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="getServerName">
@@ -185,6 +202,7 @@
       <xs:element minOccurs="0" name="arg5" type="xs:string" />
       <xs:element minOccurs="0" name="arg6" type="xs:string" />
       <xs:element minOccurs="0" name="arg7" type="xs:string" />
+      <xs:element minOccurs="0" name="arg8" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="placeOrderByAPIpasswordResponse">

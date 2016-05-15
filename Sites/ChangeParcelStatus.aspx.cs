@@ -9,24 +9,35 @@ namespace WebServices.Sites
 {
     public partial class ChangeParcelStatus : System.Web.UI.Page
     {
-        konrad.CourierService test;
+        static konrad.CourierService test;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            test = new konrad.CourierService();
-            ListBox1.Items.Clear();
-            for (int i = 1; i <= 5; i++)
+            if (!Page.IsPostBack)
             {
-                ListBox1.Items.Add(i+"");
+                test = new konrad.CourierService();
+                string[] st = { "1", "2", "3", "4", "5" };
+                DropDownListStatus.DataSource = st;
+                DropDownListStatus.DataBind();
             }
         }
 
         protected void ChangeStatusButton_Click(object sender, EventArgs e)
         {
-            //Boolean res = test.checkParcelStatus(TextBoxTrackingNumber.Text, 5, TextBoxEmployeeAPI.Text);
-            Boolean res = test.checkParcelStatus("LPBOW3G1EOHB", 5, "bio");
+            int x = 0;
+            if (Int32.TryParse(DropDownListStatus.SelectedItem.Value, out x))
+            {
+                Boolean res = test.checkParcelStatus(TextBoxTrackingNumber.Text, x, TextBoxEmployeeAPI.Text);
+                LabelResponse.Text = res.ToString();
+            }
+            else
+            {
+                LabelResponse.Text = "Problem ze zmiana statusu. Sprobuj ponownie.";
+            }
+            //Boolean res = test.checkParcelStatus(TextBoxTrackingNumber.Text, ListBox1.SelectedValue.Text, TextBoxEmployeeAPI.Text);
+            //Boolean res = test.checkParcelStatus("LPBOW3G1EOHB", 5, "bio");
             //test.
-            LabelResponse.Text = res.ToString();
+           
         }
 
         /*protected void ChangeStatusButton_Click5(object sender, EventArgs e)

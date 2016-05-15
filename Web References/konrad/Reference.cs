@@ -141,7 +141,7 @@ namespace WebServices.konrad {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool registry([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg1, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg2, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg3, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg4, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg5, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg6, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg7, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg8, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg9) {
+        public bool registry([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg1, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg2, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg3, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg4, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg5, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg6, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg7, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg8, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg9, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg10) {
             object[] results = this.Invoke("registry", new object[] {
                         arg0,
                         arg1,
@@ -152,17 +152,18 @@ namespace WebServices.konrad {
                         arg6,
                         arg7,
                         arg8,
-                        arg9});
+                        arg9,
+                        arg10});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void registryAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9) {
-            this.registryAsync(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, null);
+        public void registryAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9, string arg10) {
+            this.registryAsync(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, null);
         }
         
         /// <remarks/>
-        public void registryAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9, object userState) {
+        public void registryAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9, string arg10, object userState) {
             if ((this.registryOperationCompleted == null)) {
                 this.registryOperationCompleted = new System.Threading.SendOrPostCallback(this.OnregistryOperationCompleted);
             }
@@ -176,7 +177,8 @@ namespace WebServices.konrad {
                         arg6,
                         arg7,
                         arg8,
-                        arg9}, this.registryOperationCompleted, userState);
+                        arg9,
+                        arg10}, this.registryOperationCompleted, userState);
         }
         
         private void OnregistryOperationCompleted(object arg) {
@@ -246,27 +248,31 @@ namespace WebServices.konrad {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void getUnclaimedParcels() {
-            this.Invoke("getUnclaimedParcels", new object[0]);
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string[] getUnclaimedParcels([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0) {
+            object[] results = this.Invoke("getUnclaimedParcels", new object[] {
+                        arg0});
+            return ((string[])(results[0]));
         }
         
         /// <remarks/>
-        public void getUnclaimedParcelsAsync() {
-            this.getUnclaimedParcelsAsync(null);
+        public void getUnclaimedParcelsAsync(string arg0) {
+            this.getUnclaimedParcelsAsync(arg0, null);
         }
         
         /// <remarks/>
-        public void getUnclaimedParcelsAsync(object userState) {
+        public void getUnclaimedParcelsAsync(string arg0, object userState) {
             if ((this.getUnclaimedParcelsOperationCompleted == null)) {
                 this.getUnclaimedParcelsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetUnclaimedParcelsOperationCompleted);
             }
-            this.InvokeAsync("getUnclaimedParcels", new object[0], this.getUnclaimedParcelsOperationCompleted, userState);
+            this.InvokeAsync("getUnclaimedParcels", new object[] {
+                        arg0}, this.getUnclaimedParcelsOperationCompleted, userState);
         }
         
         private void OngetUnclaimedParcelsOperationCompleted(object arg) {
             if ((this.getUnclaimedParcelsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getUnclaimedParcelsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.getUnclaimedParcelsCompleted(this, new getUnclaimedParcelsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -453,8 +459,56 @@ namespace WebServices.konrad {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string placeOrderByLoginAndPassword([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg1, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg2, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg3, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg4, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg5, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg6, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg7, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg8) {
+        public string placeOrderByLoginAndPassword([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg1, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg2, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg3, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg4, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg5, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg6, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg7, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg8, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg9) {
             object[] results = this.Invoke("placeOrderByLoginAndPassword", new object[] {
+                        arg0,
+                        arg1,
+                        arg2,
+                        arg3,
+                        arg4,
+                        arg5,
+                        arg6,
+                        arg7,
+                        arg8,
+                        arg9});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void placeOrderByLoginAndPasswordAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9) {
+            this.placeOrderByLoginAndPasswordAsync(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, null);
+        }
+        
+        /// <remarks/>
+        public void placeOrderByLoginAndPasswordAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, string arg9, object userState) {
+            if ((this.placeOrderByLoginAndPasswordOperationCompleted == null)) {
+                this.placeOrderByLoginAndPasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnplaceOrderByLoginAndPasswordOperationCompleted);
+            }
+            this.InvokeAsync("placeOrderByLoginAndPassword", new object[] {
+                        arg0,
+                        arg1,
+                        arg2,
+                        arg3,
+                        arg4,
+                        arg5,
+                        arg6,
+                        arg7,
+                        arg8,
+                        arg9}, this.placeOrderByLoginAndPasswordOperationCompleted, userState);
+        }
+        
+        private void OnplaceOrderByLoginAndPasswordOperationCompleted(object arg) {
+            if ((this.placeOrderByLoginAndPasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.placeOrderByLoginAndPasswordCompleted(this, new placeOrderByLoginAndPasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string placeOrderByAPIpassword([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg1, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg2, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg3, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg4, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg5, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg6, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg7, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg8) {
+            object[] results = this.Invoke("placeOrderByAPIpassword", new object[] {
                         arg0,
                         arg1,
                         arg2,
@@ -468,57 +522,12 @@ namespace WebServices.konrad {
         }
         
         /// <remarks/>
-        public void placeOrderByLoginAndPasswordAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
-            this.placeOrderByLoginAndPasswordAsync(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, null);
+        public void placeOrderByAPIpasswordAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8) {
+            this.placeOrderByAPIpasswordAsync(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, null);
         }
         
         /// <remarks/>
-        public void placeOrderByLoginAndPasswordAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, object userState) {
-            if ((this.placeOrderByLoginAndPasswordOperationCompleted == null)) {
-                this.placeOrderByLoginAndPasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnplaceOrderByLoginAndPasswordOperationCompleted);
-            }
-            this.InvokeAsync("placeOrderByLoginAndPassword", new object[] {
-                        arg0,
-                        arg1,
-                        arg2,
-                        arg3,
-                        arg4,
-                        arg5,
-                        arg6,
-                        arg7,
-                        arg8}, this.placeOrderByLoginAndPasswordOperationCompleted, userState);
-        }
-        
-        private void OnplaceOrderByLoginAndPasswordOperationCompleted(object arg) {
-            if ((this.placeOrderByLoginAndPasswordCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.placeOrderByLoginAndPasswordCompleted(this, new placeOrderByLoginAndPasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://server.webservices.konrad.com/", ResponseNamespace="http://server.webservices.konrad.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string placeOrderByAPIpassword([System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg0, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg1, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg2, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg3, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg4, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg5, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg6, [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)] string arg7) {
-            object[] results = this.Invoke("placeOrderByAPIpassword", new object[] {
-                        arg0,
-                        arg1,
-                        arg2,
-                        arg3,
-                        arg4,
-                        arg5,
-                        arg6,
-                        arg7});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void placeOrderByAPIpasswordAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7) {
-            this.placeOrderByAPIpasswordAsync(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, null);
-        }
-        
-        /// <remarks/>
-        public void placeOrderByAPIpasswordAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, object userState) {
+        public void placeOrderByAPIpasswordAsync(string arg0, string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, string arg8, object userState) {
             if ((this.placeOrderByAPIpasswordOperationCompleted == null)) {
                 this.placeOrderByAPIpasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnplaceOrderByAPIpasswordOperationCompleted);
             }
@@ -530,7 +539,8 @@ namespace WebServices.konrad {
                         arg4,
                         arg5,
                         arg6,
-                        arg7}, this.placeOrderByAPIpasswordOperationCompleted, userState);
+                        arg7,
+                        arg8}, this.placeOrderByAPIpasswordOperationCompleted, userState);
         }
         
         private void OnplaceOrderByAPIpasswordOperationCompleted(object arg) {
@@ -633,7 +643,7 @@ namespace WebServices.konrad {
         
         private string cityField;
         
-        private string countryField;
+        private countryDistrict countryDistrictField;
         
         private string emailField;
         
@@ -686,12 +696,12 @@ namespace WebServices.konrad {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string country {
+        public countryDistrict countryDistrict {
             get {
-                return this.countryField;
+                return this.countryDistrictField;
             }
             set {
-                this.countryField = value;
+                this.countryDistrictField = value;
             }
         }
         
@@ -785,6 +795,63 @@ namespace WebServices.konrad {
     }
     
     /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://server.webservices.konrad.com/")]
+    public partial class countryDistrict {
+        
+        private country countryField;
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public country country {
+            get {
+                return this.countryField;
+            }
+            set {
+                this.countryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://server.webservices.konrad.com/")]
+    public partial class country {
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void registryCompletedEventHandler(object sender, registryCompletedEventArgs e);
     
@@ -864,7 +931,29 @@ namespace WebServices.konrad {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void getUnclaimedParcelsCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    public delegate void getUnclaimedParcelsCompletedEventHandler(object sender, getUnclaimedParcelsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getUnclaimedParcelsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getUnclaimedParcelsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]

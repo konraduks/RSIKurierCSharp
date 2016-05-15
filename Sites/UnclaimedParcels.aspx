@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChangeParcelStatus.aspx.cs" Inherits="WebServices.Sites.ChangeParcelStatus" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UnclaimedParcels.aspx.cs" Inherits="WebServices.Sites.UnclaimedParcels" %>
 
 <!DOCTYPE html>
 
@@ -13,20 +13,11 @@
 <div id="header"><h1><a href="http://www.free-css.com/free-css-layouts.php">Kurier Company</a></h1></div>
   <div id="wrapper">
     <div id="content">
-      <p><strong>Sledzenie przesylek</strong></p>
+      <p><strong>Nieodebrane przesylki</strong></p>
       <p></p>
-      <asp:Label ID="Label1" runat="server" Text="Numer przesyłki:"></asp:Label>
-      <asp:TextBox ID="TextBoxTrackingNumber" runat="server"></asp:TextBox><br />
-      <asp:Label ID="Label2" runat="server" Text="Numer zdarzenia:"></asp:Label>
-        <asp:DropDownList AutoPostBack="true" EnableViewState="True" ID="DropDownListStatus" runat="server">
-        </asp:DropDownList>
-        <br />
-      <!--<asp:ListBox ID="ListBox1" runat="server"></asp:ListBox><br />-->
-
-      <asp:Label ID="Label3" runat="server" Text="Hasło APi:"></asp:Label>
-      <asp:TextBox ID="TextBoxEmployeeAPI" runat="server"></asp:TextBox><br />
-      <asp:Button ID="ChangeStatusButton" runat="server" Text="Zmien status" OnClick="ChangeStatusButton_Click" /><br />
-      <asp:Label ID="LabelResponse" runat="server"></asp:Label>
+      <asp:TextBox ID="TextBoxEmployeeApi" runat="server"></asp:TextBox>
+      <asp:Button ID="Button" runat="server" Text="Pokaz przesylki" OnClick="TrackingButton_Click" /><br />
+      <asp:ListBox ID="ListBoxUnclaimedParcels" runat="server"></asp:ListBox>
     </div>
   </div>
   <div id="navigation">

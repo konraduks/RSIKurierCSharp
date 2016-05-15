@@ -25,8 +25,9 @@ namespace WebServices.Sites
 
         protected void RegistryButton_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine(DropDownDistricts.SelectedItem.Value);
             test.registryAsync(TextBoxLogin.Text, TextBoxPassword.Text, TextBoxAPIpassword.Text, TextBoxPhoneNumber.Text, TextBoxName.Text, TextBoxAddress.Text,
-                TextBoxCity.Text, DropDownCountry.SelectedItem.Value, TextBoxZipCode.Text, TextBoxEmail.Text);
+                TextBoxCity.Text, DropDownCountry.SelectedItem.Value, DropDownDistricts.SelectedItem.Value, TextBoxZipCode.Text, TextBoxEmail.Text);
         }
 
         protected void DropDownCountry_SelectedIndexChanged(object sender, EventArgs e)

@@ -27,7 +27,7 @@ namespace WebServices.Sites
         protected void OrderButton_Click(object sender, EventArgs e)
         {
             Label8.Text = test.placeOrderByLoginAndPassword(TextBoxLogin.Text, TextBoxPassword.Text, TextBoxName.Text, TextBoxAddress.Text, TextBoxCity.Text,
-                DropDownCountry.SelectedItem.Value, TextBoxZipCode.Text, TextBoxPhoneNumber.Text, TextBoxEmail.Text);
+                DropDownCountry.SelectedItem.Value, DropDownDistricts.SelectedItem.Value, TextBoxZipCode.Text, TextBoxPhoneNumber.Text, TextBoxEmail.Text);
         }
 
         protected void DropDownCountry_SelectedIndexChanged(object sender, EventArgs e)

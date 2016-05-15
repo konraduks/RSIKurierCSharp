@@ -72,6 +72,7 @@
     <Content Include="Sites\styles.css" />
     <Content Include="Sites\Test.aspx" />
     <Content Include="Sites\Tracking.aspx" />
+    <Content Include="Sites\UnclaimedParcels.aspx" />
     <Content Include="Site\css\bootstrap.min.css" />
     <Content Include="Site\css\font-awesome.min.css" />
     <Content Include="Site\css\templatemo_style.css" />
@@ -186,6 +187,13 @@
     </Compile>
     <Compile Include="Sites\Tracking.aspx.designer.cs">
       <DependentUpon>Tracking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sites\UnclaimedParcels.aspx.cs">
+      <DependentUpon>UnclaimedParcels.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sites\UnclaimedParcels.aspx.designer.cs">
+      <DependentUpon>UnclaimedParcels.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

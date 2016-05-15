@@ -25,8 +25,10 @@ namespace WebServices.Sites
 
         protected void OrderButton_Click(object sender, EventArgs e)
         {
+            //System.Diagnostics.Debug.WriteLine(DropDownCountry.SelectedItem.Value);
+            //System.Diagnostics.Debug.WriteLine(DropDownDistricts.SelectedItem.Value);
             Label8.Text = test.placeOrderByAPIpassword(TextBoxApi.Text, TextBoxName.Text, TextBoxAddress.Text, TextBoxCity.Text,
-                DropDownCountry.SelectedItem.Value, TextBoxZipCode.Text, TextBoxPhoneNumber.Text, TextBoxEmail.Text);
+                DropDownCountry.SelectedItem.Value, DropDownDistricts.SelectedItem.Value, TextBoxZipCode.Text, TextBoxPhoneNumber.Text, TextBoxEmail.Text);
         }
 
         protected void DropDownCountry_SelectedIndexChanged(object sender, EventArgs e)
