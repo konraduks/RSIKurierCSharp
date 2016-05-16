@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
     <div id="container">
-<div id="header"><h1><a href="http://www.free-css.com/free-css-layouts.php">Kurier Companys</a></h1></div>
+<div id="header"><h1><a href="Index.aspx">Kurier Companys</a></h1></div>
   <div id="wrapper">
     <div id="content">
       <p><strong>Test</strong></p>

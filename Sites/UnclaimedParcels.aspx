@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
     <div id="container">
-<div id="header"><h1><a href="http://www.free-css.com/free-css-layouts.php">Kurier Company</a></h1></div>
+<div id="header"><h1><a href="Index.aspx">Kurier Company</a></h1></div>
   <div id="wrapper">
     <div id="content">
       <p><strong>Nieodebrane przesylki</strong></p>

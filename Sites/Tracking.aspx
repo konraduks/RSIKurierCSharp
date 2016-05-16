@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
         <div id="container">
             <div id="header">
-                <h1><a href="http://www.free-css.com/free-css-layouts.php">Kurier Company</a></h1>
+                <h1><a href="Index.aspx">Kurier Company</a></h1>
             </div>
             <div id="wrapper">
                 <div id="content">
@@ -19,7 +19,7 @@
                     <p></p>
                     <asp:TextBox ID="TextBoxTrackingNumber" runat="server"></asp:TextBox>
                     <asp:Button ID="TrackingButton" runat="server" Text="Sledz przesylke" OnClick="TrackingButton_Click" /><br />
-                    <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
+                    <asp:ListBox ID="ListBox1" runat="server" Height="162px" Width="431px"></asp:ListBox>
                 </div>
             </div>
             <div id="navigation">
